@@ -6,8 +6,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home.component';
+import { MainComponent } from './main/main.component';
 
 import { SectionsModule } from '../sections/sections.module';
+
 
 @NgModule({
     imports: [
@@ -17,7 +19,9 @@ import { SectionsModule } from '../sections/sections.module';
         RouterModule,
         SectionsModule
     ],
-    declarations: [ HomeComponent ],
+    declarations: [ HomeComponent,
+        MainComponent
+    ],
     exports:[ HomeComponent ],
     providers: []
 })
