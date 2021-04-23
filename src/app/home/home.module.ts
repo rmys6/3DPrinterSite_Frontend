@@ -17,7 +17,8 @@ import { SectionsModule } from '../sections/sections.module';
         BrowserModule,
         FormsModule,
         RouterModule,
-        SectionsModule
+        SectionsModule,
+        NgbModule
     ],
     declarations: [ HomeComponent,
         MainComponent
