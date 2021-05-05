@@ -15,6 +15,11 @@ import { FooterComponent } from './shared/footer/footer.component';
 
 import { HomeModule } from './home/home.module';
 import { LoginComponent } from './login/login.component';
+import { UserComponent } from './shared/navbar/user/user.component';
+import { SettingComponent } from './shared/navbar/user/setting/setting.component'
+import { FavoriteComponent } from './shared/navbar/user/favorite/favorite.component';
+import { ListComponent } from './shared/navbar/user/list/list.component';
+import { AddressComponent } from './shared/navbar/user/address/address.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,12 @@ import { LoginComponent } from './login/login.component';
     ProfileComponent,
     NavbarComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    SettingComponent,
+    UserComponent,
+    FavoriteComponent,
+    ListComponent,
+    AddressComponent
   ],
   imports: [
     BrowserModule,

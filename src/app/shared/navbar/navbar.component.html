@@ -1,8 +1,5 @@
 <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top headroom--pinned">
   <div class="container">
-    <a class="navbar-brand mr-lg-5" [routerLink]="['/home']">
-      <img src="./assets/img/brand/argon-white.png">
-    </a>
     <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
           [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
       <span class="navbar-toggler-icon"></span>
@@ -24,6 +21,10 @@
           </div>
         </div>
       </div>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+         <button class="btn btn-outline-success" type="submit">Search</button>
+       </form>
       <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
         <li class="nav-item dropdown">
           <a class="nav-link no-caret" data-toggle="dropdown" role="button">
@@ -74,8 +75,36 @@
             <a [routerLink]="['/register']" class="dropdown-item">Register</a>
           </div>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link no-caret" data-toggle="dropdown" role="button">
+            <i class="ni ni-collection d-lg-none"></i>
+            <span class="nav-link-inner--text">User</span>
+          </a>
+          <div class="dropdown-menu">
+            <a [routerLink]="['/landing']" class="dropdown-item">Setting</a>
+            <a [routerLink]="['/user-profile']" class="dropdown-item">Favorites</a>
+            <a [routerLink]="['/login']" class="dropdown-item">Lists</a>
+            <a [routerLink]="['/register']" class="dropdown-item">Addresses</a>
+          </div>
+        </li>
+      </ul>    
+      <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+        <li class="nav-item">
+
+          <span class="btn-inner--icon"><i class="ni ni-favourite-28"></i></span>
+        </li>
       </ul>
       <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+        <li class="nav-item">
+          <span class="btn-inner--icon"><i class="ni ni-email-83"></i></span>
+        </li>
+      </ul>
+      <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+        <li class="nav-item">
+          <span class="btn-inner--icon"><i class="ni ni-basket"></i></span>
+        </li>
+      </ul>     
+<!--       <ul class="navbar-nav align-items-lg-center ml-lg-auto">
         <li class="nav-item">
           <a class="nav-link nav-link-icon" href="https://www.facebook.com/creativetim" target="_blank" data-toggle="tooltip" title="Like us on Facebook">
             <i class="fa fa-facebook-square"></i>
@@ -100,7 +129,7 @@
             <span class="nav-link-inner--text d-lg-none">Github</span>
           </a>
         </li>
-      </ul>
+      </ul> -->
     </div>
   </div>
 </nav>
