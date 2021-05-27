@@ -90,18 +90,16 @@
       </ul>    
       <ul class="navbar-nav align-items-lg-center ml-lg-auto">
         <li class="nav-item">
-
           <span class="btn-inner--icon"><i class="ni ni-favourite-28"></i></span>
         </li>
-      </ul>
-      <ul class="navbar-nav align-items-lg-center ml-lg-auto">
         <li class="nav-item">
           <span class="btn-inner--icon"><i class="ni ni-email-83"></i></span>
         </li>
-      </ul>
-      <ul class="navbar-nav align-items-lg-center ml-lg-auto">
         <li class="nav-item">
-          <span class="btn-inner--icon"><i class="ni ni-basket"></i></span>
+          <a [routerLink]="['/chart']" class="nav-link nav-link-icon">
+            <i class="ni ni-basket"></i>
+            <span class="nav-link-inner--text d-lg-none">Chart</span>
+          </a>
         </li>
       </ul>     
 <!--       <ul class="navbar-nav align-items-lg-center ml-lg-auto">
