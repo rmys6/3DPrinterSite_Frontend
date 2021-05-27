@@ -1,8 +1,9 @@
 import { Component, NgModule, OnInit } from '@angular/core';
-import { Router, NavigationEnd, NavigationStart } from '@angular/router';
+import { Router, NavigationEnd, NavigationStart, RouterModule } from '@angular/router';
 import { Location, PopStateEvent } from '@angular/common';
 import { SettingComponent } from './user/setting/setting.component';
 import { UserComponent } from './user/user.component';
+import { LoginComponent } from 'src/app/login/login.component';
 
 
 
@@ -11,8 +12,11 @@ import { UserComponent } from './user/user.component';
     declarations:[
         NavbarComponent,
         UserComponent,
-       
-        ]
+               
+        ],
+    imports: [
+        RouterModule,
+    ],        
    
 })
 

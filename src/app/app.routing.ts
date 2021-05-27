@@ -9,6 +9,10 @@ import { SignupComponent } from './signup/signup.component';
 import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 import { ProductComponent } from './product/product.component';
+import { FavoriteComponent } from './shared/navbar/user/favorite/favorite.component';
+import { ListComponent } from './shared/navbar/user/list/list.component';
+import { AddressComponent } from './shared/navbar/user/address/address.component';
+import { SettingComponent } from './shared/navbar/user/setting/setting.component';
 
 const routes: Routes =[
     { path: 'home',             component: HomeComponent },
@@ -17,8 +21,13 @@ const routes: Routes =[
     { path: 'landing',          component: LandingComponent },
     { path: 'login',          component: LoginComponent },
     { path: 'product',          component: ProductComponent },
+    { path: 'favorite',         component:FavoriteComponent },
+    { path: 'list',         component:ListComponent },
+    { path: 'address',         component:AddressComponent },
+    { path: 'setting',         component:SettingComponent },
     { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
+
 
 @NgModule({
   imports: [

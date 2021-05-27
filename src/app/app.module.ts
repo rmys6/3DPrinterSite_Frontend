@@ -5,6 +5,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 
+
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
 import { LandingComponent } from './landing/landing.component';
@@ -23,6 +24,7 @@ import { ListComponent } from './shared/navbar/user/list/list.component';
 import { AddressComponent } from './shared/navbar/user/address/address.component';
 
 import { ProductComponent } from './product/product.component';
+
 
 
 @NgModule({
@@ -50,7 +52,7 @@ import { ProductComponent } from './product/product.component';
     FormsModule,
     RouterModule,
     AppRoutingModule,
-    HomeModule
+    HomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
