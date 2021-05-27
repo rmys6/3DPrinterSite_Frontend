@@ -23,7 +23,7 @@ import { ListComponent } from './shared/navbar/user/list/list.component';
 import { AddressComponent } from './shared/navbar/user/address/address.component';
 
 import { ProductComponent } from './product/product.component';
-import { ChartComponent } from './chart/chart.component';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
@@ -43,7 +43,7 @@ import { ChartComponent } from './chart/chart.component';
     AddressComponent,
 
     ProductComponent,
-    ChartComponent,
+    CartComponent,
 
   ],
   imports: [

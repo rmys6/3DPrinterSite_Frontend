@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  Products = [
+  public Products = [
     {Name: "Ball", Seller: "Seller 1", Price: 30},
     {Name: "Bottle", Seller: "Seller 2", Price: 50},
     {Name: "Box", Seller: "Seller 3", Price: 75},
