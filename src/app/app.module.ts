@@ -25,6 +25,7 @@ import { AddressComponent } from './shared/navbar/user/address/address.component
 
 import { ProductComponent } from './product/product.component';
 import { CartComponent } from './cart/cart.component';
+import { PaymentComponent } from './payment/payment.component';
 
 
 
@@ -46,6 +47,7 @@ import { CartComponent } from './cart/cart.component';
 
     ProductComponent,
     CartComponent,
+    PaymentComponent,
 
   ],
   imports: [

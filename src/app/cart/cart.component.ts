@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class CartComponent implements OnInit {
 
   public CartProducts = [
-    {Name: "Ball", Seller: "Seller 1", Price: 30},
-    {Name: "Bottle", Seller: "Seller 2", Price: 50},
+    {Name: "Flowerpot", Seller: "Seller 2", Price: 50, Image: "./assets/img/theme/flowerpot.jpeg"},
+    {Name: "Glasses", Seller: "Seller 3", Price: 75, Image: "./assets/img/theme/glasses.jpeg"},
    ]; 
 
   constructor() { }

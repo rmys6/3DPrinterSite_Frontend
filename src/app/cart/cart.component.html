@@ -7,7 +7,7 @@
                     <div class="card-body p-4"  >
                         <div class="row"  *ngFor="let cartProduct of CartProducts">
                             <div class="col-lg-2 ">
-                                <img src="./assets/img/theme/promo-1.png" alt="Raised image" class="img-fluid rounded ml-2" style="width: 100px;" >
+                                <img src={{cartProduct.Image}} alt="Raised image" class="img-fluid rounded ml-2" style="width: 100px;" >
                             </div>
                             <div class="col-lg-3 pt-3">
                                 <p class="text-muted font-weight-bold">{{cartProduct.Seller}}</p>
@@ -33,32 +33,34 @@
                 </div>   
                 <div class="card shadow mt-3 px-2 col-lg-3">
                     <div class="card-body p-4"  >
-                        <button class="btn btn-2 btn-primary mt-2 mx-0" type="button">
-                            <span class="btn-inner--text">  Confirm Cart</span>
-                            <span class="btn-inner--icon pl-2"><i class="ni ni-bold-right"></i></span>
-                        </button>
+                        <a [routerLink]="['/payment']">
+                            <button class="btn btn-2 btn-primary mt-2 mx-0" type="button">
+                                <span class="btn-inner--text">  Confirm Cart</span>
+                                <span class="btn-inner--icon pl-2"><i class="ni ni-bold-right"></i></span>
+                            </button>
+                        </a>
                         <div class="row pt-4">
-                            <div class="col-lg-7">
+                            <div class="col-lg-6">
                                 <h6>{{CartProducts?.length}} Products</h6>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-5">
                                 <h6>{{CartProducts[0].Price + CartProducts[1].Price}} TL</h6>
                             </div>
                         </div>
                         <div class="row pt-2">
-                            <div class="col-lg-7">
+                            <div class="col-lg-6">
                                 <h6>Shipping</h6>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-5">
                                 <h6>10 TL</h6>
                             </div>
                         </div>
                         <hr>
                         <div class="row">
-                            <div class="col-lg-7">
+                            <div class="col-lg-6">
                                 <h6>Subtotal</h6>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-5">
                                 <h6>{{CartProducts[0].Price + CartProducts[1].Price + 10}} TL</h6>
                             </div>
                         </div>
