@@ -4,7 +4,8 @@ import { Location, PopStateEvent } from '@angular/common';
 import { SettingComponent } from './user/setting/setting.component';
 import { UserComponent } from './user/user.component';
 import { LoginComponent } from 'src/app/login/login.component';
-
+import { CommonModule} from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -17,6 +18,8 @@ import { LoginComponent } from 'src/app/login/login.component';
         ],
     imports: [
         RouterModule,
+        CommonModule,
+        NgbModule,
         ],
 })
 
@@ -27,8 +30,10 @@ import { LoginComponent } from 'src/app/login/login.component';
 })
 export class NavbarComponent implements OnInit {
     public isCollapsed = true;
+    public isLoggedIn = false; 
     private lastPoppedUrl: string;
     private yScrollStack: number[] = [];
+    
 
     constructor(public location: Location, private router: Router) {
     }

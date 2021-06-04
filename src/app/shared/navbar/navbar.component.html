@@ -1,76 +1,63 @@
 <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-dark bg-primary headroom headroom--top headroom--pinned">
   <div class="container">
+    <a class="navbar-brand mr-lg-5" [routerLink]="['/home']">
+      <img src="./assets/img/brand/argon-white.png">
+    </a>
     <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
           [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <div class="form-group pt-2" [ngClass]="{'focused':focus===true}">
+      <div class="input-group" style=" width: 25rem;">
+        <div class="input-group-prepend">
+          <span class="input-group-text p-1"><i class="ni ni-zoom-split-in" style="height: 14px;" ></i></span>
+        </div>
+        <input class="form-control py-1 pl-2" placeholder="Search" type="text" (focus)="focus=true" (blur)="focus=false"  style="height: 70%;">
+      </div>
+    </div>
     <div class="navbar-collapse collapse" id="navbar_global" [ngbCollapse]="isCollapsed">
       <div class="navbar-collapse-header">
         <div class="row">
-          <div class="navbar-collapse collapse" id="navbar_global" [ngbCollapse]="isCollapsed">
-            <div class="navbar-collapse-header">
-              <div class="row">
-                <div class="col-6 collapse-brand">
-                  <a [routerLink]="['/home']">
-                    <img src="./assets/img/brand/blue.png">
-                  </a>
-                </div>
-                <div class="col-6 collapse-close">
-                  <button type="button" class="navbar-toggler" (click)="isCollapsed = !isCollapsed"
-                        [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
-                    <span></span>
-                    <span></span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div> 
         </div>
-      </div> 
-
-        <form class="d-flex">
-          <input class="form-control me-2" type="search"  placeholder="Search" aria-label="Search">
-         <button class="btn bg-gradient-primary" style="color: white;" type="submit" >Search</button>
-       </form>      
-      <ul class="navbar-nav navbar-nav-hover align-items-lg-center ml-lg-auto">
-
-        <li class="nav-item dropdown">
+      </div>
+      
+      <ul class="navbar-nav navbar-nav-hover align-items-lg-center ml-lg-auto"><!--
           <a class="nav-link no-caret" data-toggle="dropdown" role="button">
             <i class="ni ni-collection d-lg-none"></i>
             <span class="nav-link-inner--text">Account</span>
-          </a>
-          <div class="dropdown-menu"><!--
-            <a [routerLink]="['/landing']" class="dropdown-item">Landing</a>
-            <a [routerLink]="['/user-profile']" class="dropdown-item">Profile</a>-->
-            <a [routerLink]="['/login']" class="dropdown-item">Login</a>
-            <a [routerLink]="['/register']" class="dropdown-item">Register</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link no-caret" data-toggle="dropdown" role="button">
-            <i class="fa fa-user-circle"></i>
-            <span class="nav-link-inner--text">User</span>
-          </a>
-          <div class="dropdown-menu">
-            <a [routerLink]="['/setting']" class="dropdown-item">Settings</a>
-            <a [routerLink]="['/list']" class="dropdown-item">Lists</a>
-            <a [routerLink]="['/favorite']" class="dropdown-item">Favorites</a>
-            <a [routerLink]="['/address']" class="dropdown-item">Addresses</a>
-          </div>
-        </li>
+          </a>-->
+          <li class="nav-item" style="color: white;">
+            <div *ngIf="isLoggedIn" >
+              <a [routerLink]="['/favorite']" class="nav-link no-caret" role="button">
+                <i class="fa fa-user-circle"></i>
+                <span class="nav-link-inner--text">User</span>
+              </a>
+            </div>
+          </li> 
+          <li class="nav-item" style="color: white;">
+            <div *ngIf="!isLoggedIn" >
+              <a [routerLink]="['/login']" class="nav-link no-caret"  role="button">
+                <span class="nav-link-inner--text">Sign In</span>
+              </a>
+            </div>
+          </li> 
+          <li class="nav-item" style="color: white;">
+            <div *ngIf="!isLoggedIn">
+              <a [routerLink]="['/register']" class="nav-link no-caret"  role="button">
+                <span class="nav-link-inner--text">Sign Up</span>
+              </a>
+            </div>
+          </li> 
       </ul>    
-      <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+      <ul class="navbar-nav align-items-lg-center ml-lg-auto"><!--
         <li class="nav-item" style="color: white;">
           <span class="btn-inner--icon" role="button"><i class="ni ni-favourite-28"></i></span>
           <a [routerLink]="['/favorite']" ></a>
-        </li>
-        <li class="nav-item" style="color: white;">
-          <span class="btn-inner--icon"><i class="ni ni-email-83"></i></span>
-        </li>
+        </li>-->
         <li class="nav-item" style="color: white;">
           <a [routerLink]="['/cart']" class="nav-link nav-link-icon">
             <span class="nav-link--icon"><i class="ni ni-basket"></i></span>
-            <span class="nav-link-inner--text">2</span>
+            <span class="p-2" style="font-size: 12px;">2</span>
           </a>
         </li>
       </ul>     
