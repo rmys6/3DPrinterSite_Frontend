@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home.component';
 import { MainComponent } from './main/main.component';
+import { FilterAreaComponent } from './filter-area/filter-area.component'
 
 import { SectionsModule } from '../sections/sections.module';
 
@@ -21,7 +22,8 @@ import { SectionsModule } from '../sections/sections.module';
         NgbModule
     ],
     declarations: [ HomeComponent,
-        MainComponent
+        MainComponent,
+        FilterAreaComponent,
     ],
     exports:[ HomeComponent ],
     providers: []
