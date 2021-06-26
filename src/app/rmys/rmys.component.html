@@ -1,0 +1,157 @@
+<section class="section section-components pb-0 pt-3" id="section-components">
+  <div class="container">
+      <!-- Basic elements -->
+      <h2 class="mb-2">
+          <span>All Products</span>
+      </h2>
+      <div class="row">
+          <div class="col-lg-2">
+              <small>Filter area</small>
+          </div>
+          <div class="col-lg-10">
+              <div class="row row-grid align-items-center">
+                  <div class="col-lg-4 col-sm-6 px-2" *ngFor="let product of Products | slice: pageSize | slice: 0:itemsPerPage">
+                      <div class="card shadow shadow-lg--hover mt-3"  >
+                          <a [routerLink]="['/product']" >
+                              <div class="card-body p-2">
+                                  <div class="d-flex px-1">
+                                      <div>
+                                          <img src={{product.Image}} alt="Raised image" class="img-fluid rounded m-1" style="height: 300px;" >
+                                          <small class="text-muted font-weight-bold">{{product.Seller}} </small>
+                                          <small class="text-muted"> {{product.Name}} </small>
+                                          <!--
+                                          <button class="btn btn-icon btn-2 btn-primary" type="button">
+                                              <span class="btn-inner--icon"><i class="ni ni-basket"></i></span>
+                                              <span class="btn-inner--text">Add to Cart</span>
+                                          </button>
+                                          -->
+                                          <p class="text-primary text-center font-weight-bold mb-0 mt-3">{{product.Price}}  TL</p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row justify-content-center mt-5">
+          <nav aria-label="Page navigation example">
+              <ngb-pagination [collectionSize]="Products.length" [pageSize]="itemsPerPage" [(page)]="currentPage" (pageChange)="onPageChange(currentPage)" aria-label="Default pagination">
+                <ng-template ngbPaginationPrevious><i _ngcontent-c9="" class="fa fa-angle-left"></i></ng-template>
+                <ng-template ngbPaginationNext><i _ngcontent-c9="" class="fa fa-angle-right"></i></ng-template>
+              </ngb-pagination>
+          </nav>
+      </div>
+  </div>
+
+<!--
+Iconları rahat görebilmek için uncomment yapabilirsiniz.
+
+  <span class="btn-inner--icon"><i class="ni ni-bag-17"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-active-40"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-air-baloon"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-album-2"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-align-center"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-align-left-2"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-ambulance"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-app"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-archive-2"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-atom"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-badge"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-basket"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-bell-55"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-bold-down"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-bold-left"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-bold-right"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-bold-up"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-bold"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-book-bookmark"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-books"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-box-2"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-briefcase-24"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-building"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-bullet-list-67"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-bulb-61"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-bus-front-12"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-button-pause"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-button-play"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-button-power"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-calendar-grid-58"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-camera-compact"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-caps-small"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-cart"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-chart-bar-32"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-chart-pie-35"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-chat-round"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-check-bold"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-circle-08"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-cloud-download-95"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-cloud-upload-96"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-compass-04"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-controller"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-credit-card"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-curved-next"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-delivery-fast"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-diamond"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-email-83"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-fat-delete"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-fat-remove"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-favourite-28"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-folder-17"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-glasses-2"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-hat-3"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-headphones"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-html5"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-istanbul"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-key-25"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-laptop"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-like-2"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-lock-circle-open"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-map-big"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-mobile-button"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-money-coins"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-note-03"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-notification-70"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-palette"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-paper-diploma"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-pin-3"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-planet"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-ruler-pencil"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-satisfied"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-scissors"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-send"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-settings-gear-65"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-settings"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-single-02"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-single-copy-04"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-sound-wave"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-square-pin"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-support-16"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-tablet-button"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-tag"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-tie-bow"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-time-alarm"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-trophy"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-tv-2"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-umbrella-13"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-user-run"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-vector"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-watch-time"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-world"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-zoom-split-in"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-collection"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-image"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-shop"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-ungroup"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-world-2"></i></span>
+  <span class="btn-inner--icon"><i class="ni ni-ui-04"></i></span>
+
+-->
+
+</section>
+
+
+
+

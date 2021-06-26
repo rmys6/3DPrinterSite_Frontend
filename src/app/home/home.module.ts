@@ -7,7 +7,9 @@ import { RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home.component';
 import { MainComponent } from './main/main.component';
-import { FilterAreaComponent } from './filter-area/filter-area.component'
+import { FilterAreaComponent } from './filter-area/filter-area.component';
+import { CategoryComponent } from '../category/category.component';
+import { ProductComponent } from '../product/product.component';
 
 import { SectionsModule } from '../sections/sections.module';
 
@@ -24,6 +26,8 @@ import { SectionsModule } from '../sections/sections.module';
     declarations: [ HomeComponent,
         MainComponent,
         FilterAreaComponent,
+
+        
     ],
     exports:[ HomeComponent ],
     providers: []
