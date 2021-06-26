@@ -9,11 +9,11 @@ import { AuthService } from "../services/auth.service";
 import { Router } from "@angular/router";
 
 @Component({
-  selector: "app-signup",
-  templateUrl: "./signup.component.html",
-  styleUrls: ["./signup.component.scss"],
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss']
 })
-export class SignupComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
   registerForm:FormGroup;
 
@@ -24,7 +24,8 @@ export class SignupComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-      this.createRegisterForm();
+
+    this.createRegisterForm();
   }
 
   createRegisterForm() {
@@ -42,7 +43,7 @@ export class SignupComponent implements OnInit {
       console.log(this.registerForm.value);
 
       let registerModel = Object.assign({}, this.registerForm.value);
-      this.authService.login(registerModel).subscribe(
+      this.authService.register(registerModel).subscribe(
         (response) => {
           console.log(response);
           localStorage.setItem("token", response.data.token);
@@ -54,4 +55,5 @@ export class SignupComponent implements OnInit {
       );
     }
   }
+
 }

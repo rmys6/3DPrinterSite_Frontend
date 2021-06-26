@@ -1,0 +1,58 @@
+<!-- <div class="card" style="width: 18rem;">
+  <img src="./assets/img/theme/cube.jpeg" class="card-img-top" alt="Raised Image">
+  <div class="card-body">
+    <h5 class="card-title">{{product.name}}</h5>
+    <p class="card-text">{{product.price}}</p>
+  </div>
+</div> -->
+
+<main>
+  <section class="section section-shaped mt-5">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-7">
+                  <div class="card shadow mt-3">
+                      <div class="card-body p-5" style="height: 450px;">
+                          <img src="./assets/img/theme/cube.jpeg" alt="Raised image" class="img-fluid rounded mb-1" style="height: 400px;">
+                      </div>
+                      
+                  </div>
+              </div>
+              <div class="col-lg-5">
+                  <div class="card shadow mt-3">
+                      <div class="card-body p-4" style="height: 450px;">
+                          <h4 class="text-muted font-weight-bold">Marka/Seller </h4>
+                          <h5 class="text-muted"> {{product.name}}</h5>
+                          <div class="row mt-4">
+                              <div class="col-lg-6">
+                                  <div class="row mx-0 mt-1">
+                                      <button class="btn-sm btn-icon btn-1 btn-primary shadow-lg--hover" type="button">
+                                          <span class="btn-inner--icon"><i class="ni ni-fat-delete"></i></span>
+                                      </button>
+                                      <input type="text" placeholder="  1" class="form-control mx-1" />
+                                      <button class="btn-sm btn-icon btn-1 btn-primary shadow-lg--hover" type="button">
+                                          <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
+                                      </button>
+                                  </div>
+                              </div>
+                              <div class="col-lg-6">
+                                  <h3 class="text-primary font-weight-bold mb-4">{{product.price}}</h3>
+                              </div>
+                          </div>
+                          <button class="btn btn-icon btn-2 btn-primary mt-2" type="button">
+                              <span class="btn-inner--icon"><i class="ni ni-basket"></i></span>
+                              <span class="btn-inner--text">Add to Cart</span>
+                          </button>
+                          <div class="mt-4">
+                              <h5 class="text-muted font-weight-bold">Product Details </h5>
+                              <p>Material</p>
+                              <p>Dimension</p>
+                              <p>...</p>
+                          </div>
+                      </div>
+                  </div>          
+              </div>
+          </div>
+      </div>
+  </section>
+</main>

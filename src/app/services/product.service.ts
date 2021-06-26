@@ -4,6 +4,7 @@ import { HttpClient } from  '@angular/common/http';
 import { Observable } from "rxjs";
 import { ListResponseModel } from '../models/listResponseModel';
 import { Product } from '../models/product';
+import { SingleResponseModel } from '../models/singleResponseModel';
 
 @Injectable({
   providedIn: "root",
@@ -22,5 +23,11 @@ export class ProductService {
 
     let newPath = this.apiUrl + "products/getbycategoryid?categoryId="+categoryId;
     return this.httpClient.get<ListResponseModel<Product>>(newPath);
+  }
+
+  getProductsById(productId:number){
+
+    let newPath = this.apiUrl + "products/getbyid?id="+productId;
+    return this.httpClient.get<SingleResponseModel<Product>>(newPath);
   }
 }

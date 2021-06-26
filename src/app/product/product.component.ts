@@ -14,6 +14,9 @@ import { ProductService } from '../services/product.service';
 export class ProductComponent implements OnInit {
 
   
+  currentPage = 1;
+  itemsPerPage = 5;
+  pageSize: number;
 
   //https://localhost:44365/api
   products: Product[] = [];

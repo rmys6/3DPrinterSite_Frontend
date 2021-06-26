@@ -35,12 +35,14 @@ import { NaviComponent } from './navi/navi.component';
 import { MainComponent } from './main/main.component';
 import { RmysComponent } from './rmys/rmys.component';
 import { SigninComponent } from './signin/signin.component';
+import { RegisterComponent } from './register/register.component';
+import { ProductDetailComponent } from './productDetail/productDetail.component';
 
 
 
 
 @NgModule({
-  declarations: [							
+  declarations: [									
     AppComponent,
     SignupComponent,
     LandingComponent,
@@ -63,7 +65,9 @@ import { SigninComponent } from './signin/signin.component';
       NaviComponent,
       MainComponent,
       RmysComponent,
-      SigninComponent
+      SigninComponent,
+      RegisterComponent,
+      ProductDetailComponent
    ],
   imports: [
     ReactiveFormsModule,

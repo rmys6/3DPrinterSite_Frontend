@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { LoginModel } from '../models/loginModel';
+import { RegisterModel } from '../models/registerModel';
 import { SingleResponseModel } from '../models/singleResponseModel';
 import { TokenModel } from '../models/tokenModel';
 
@@ -28,4 +29,13 @@ constructor(private httpClient:HttpClient) { }
     }
   }
 
+
+
+  register(registerModel:RegisterModel) {
+    return this.httpClient.post<SingleResponseModel<TokenModel>>(
+      this.apiUrl + 'register',
+      registerModel
+    );
+  }
+  
 }

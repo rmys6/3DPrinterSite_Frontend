@@ -1,6 +1,6 @@
 <body class="text-center">
   <main class="form-signin">
-    <form [formGroup]="loginForm">
+    <form [formGroup]="registerForm">
       <h1 class="h3 mb-3 fw-normal">Giriş yap</h1>
 
       <div class="form-floating">
@@ -9,7 +9,7 @@
           type="email"
           class="form-control"
           id="floatingInput"
-          placeholder="name@example.com"
+          placeholder="name@ofk.com"
         />
         <label for="floatingInput">E-posta</label>
       </div>
@@ -59,8 +59,8 @@
           <input type="checkbox" value="remember-me" /> Remember me
         </label>
       </div>
-      <button  class="w-100 btn btn-lg btn-primary" (click)="login()">
-        Giriş yap
+      <button  class="w-100 btn btn-lg btn-primary" (click)="register()">
+        Kayıt Ol
       </button>
       <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
     </form>
