@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ListResponseModel } from '../models/listResponseModel';
 import { Product } from '../models/product';
 
+
 import { ProductService } from '../services/product.service';
 
 
@@ -13,22 +14,23 @@ import { ProductService } from '../services/product.service';
 })
 export class ProductComponent implements OnInit {
 
-  
+
   currentPage = 1;
   itemsPerPage = 5;
   pageSize: number;
 
   //https://localhost:44365/api
   products: Product[] = [];
-  productResponseModel:ListResponseModel<Product>;
-  constructor(private productService: ProductService, private activatedRoute:ActivatedRoute) { }
+  productResponseModel: ListResponseModel<Product>;
+  constructor(private productService: ProductService
+    , private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
 
-    this.activatedRoute.params.subscribe((params)=>{
-      if(params["categoryId"]){
+    this.activatedRoute.params.subscribe((params) => {
+      if (params["categoryId"]) {
         this.getProductsByCategory(params["categoryId"])
-      }else{
+      } else {
         this.getProducts();
       }
     })
@@ -42,7 +44,7 @@ export class ProductComponent implements OnInit {
       })
   }
 
-  getProductsByCategory(categoryId:number) {
+  getProductsByCategory(categoryId: number) {
 
     this.productService.getProductsByCategory(categoryId)
       .subscribe((response) => {

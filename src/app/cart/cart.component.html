@@ -1,29 +1,42 @@
 <main>
-    <section class="section section-shaped mt-5">
+
+    <div *ngIf="cartItems.length<1" class="container-fluid mt-100">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Cart</h5>
+                    </div>
+                    <div class="card-body cart">
+                        <div class="col-sm-12 empty-cart-cls text-center"> <img src="https://i.imgur.com/dCdflKN.png" width="130" height="130" class="img-fluid mb-4 mr-3">
+                            <h3><strong>Your Cart is Empty</strong></h3>
+                            <h4>Add something to make me happy :)</h4> <a href="#/home" class="btn btn-primary cart-btn-transform m-3" data-abc="true">continue shopping</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section *ngIf="cartItems.length>0" class="section section-shaped mt-5">
         <div class="container"> 
             <h4>My Cart ({{CartProducts?.length}} Product)</h4> 
             <div class="row"> 
                 <div class="container m-0 pt-4 col-lg-9">
-                    <div class="card shadow mt-3  mx-2"  *ngFor="let cartProduct of CartProducts" >
+                    <div class="card shadow mt-3  mx-2"  *ngFor="let cartItem of cartItems" >
                         <div class="card-body p-4"  >
                             <div class="row" >
                                 <div class="col-lg-2 ">
-                                    <img src={{cartProduct.Image}} alt="Raised image" class="img-fluid rounded ml-2" style="width: 100px;" >
+                                    <img src= "./assets/img/theme/flowerpot.jpeg" alt="Raised image" class="img-fluid rounded ml-2" style="width: 100px;" >
                                 </div>
                                 <div class="col-lg-3 pt-3">
-                                    <p class="text-muted font-weight-bold">{{cartProduct.Seller}}</p>
-                                    <p class="text-muted"> {{cartProduct.Name}}</p>
+                                    <p class="text-muted font-weight-bold">{{cartItem.product.name}}</p>
                                 </div>
-                                <div class="col-lg-2 pt-3 ">
-                                    <div class=" px-2">
-                                        <input type="number" placeholder="  1" min="0" class="form-control " style=" display: inline-flex; "/>
-                                    </div>
-                                </div>
+
                                 <div class="col-lg-3 pt-3">
-                                    <h4 class="text-primary font-weight-bold mb-4 ml-3">{{cartProduct.Price}}.00 TL</h4>
+                                    <h4 class="text-primary font-weight-bold mb-4 ml-3">{{cartItem.quantity}}</h4>
                                 </div>
                                 <div class="col-lg-2 pt-3" >
-                                    <button class="btn btn-icon btn-1 btn-outline-primary" type="button">
+                                    <button class="btn btn-icon btn-1 btn-outline-primary" (click)="removeFromCart(cartItem.product)" type="button">
                                         <span class="btn-inner--icon"><i class="fa fa-trash-o"></i></span>
                                     </button>
                                 </div>
