@@ -1,68 +1,108 @@
-<body class="text-center">
-  <main class="form-signin">
-    <form [formGroup]="registerForm">
-      <h1 class="h3 mb-3 fw-normal">Giriş yap</h1>
 
-      <div class="form-floating">
-        <input
-          formControlName="email"
-          type="email"
-          class="form-control"
-          id="floatingInput"
-          placeholder="name@ofk.com"
-        />
-        <label for="floatingInput">E-posta</label>
-      </div>
-      <div class="form-floating">
-        <input
-        formControlName="password"
-          type="password"
-          class="form-control"
-          id="floatingPassword"
-          placeholder="Password"
-        />
-        <label for="floatingPassword">Parola</label>
-      </div>
-      <div class="form-floating">
-        <input
-        formControlName="name"
-          type="text"
-          class="form-control"
-          id="floatingPassword"
-          placeholder="name"
-        />
-        <label for="floatingPassword">Name</label>
-      </div>
-      <div class="form-floating">
-        <input
-        formControlName="surname"
-          type="text"
-          class="form-control"
-          id="floatingInput"
-          placeholder="surname"
-        />
-        <label for="floatingPassword">Surname</label>
-      </div>
-      <div class="form-floating">
-        <input
-        formControlName="phone"
-          type="text"
-          class="form-control"
-          id="floatingInput"
-          placeholder="phone"
-        />
-        <label for="floatingPassword">Phone</label>
-      </div>
+<main class="form-signin">
+  <section class="section section-shaped section-lg">
+    <div class="container pt-lg-md">
+      <div class="row justify-content-center">
+        <div class="col-lg-5">
+          <div class="card bg-secondary shadow border-0">
+            <body class="text-center">
+              <div class="card-body px-lg-5 py-lg-5">
+              
+                  <form role="form" [formGroup]="loginForm">
+                    <h1 class="h3 mb-3 fw-normal">Kayıt Ol</h1>
+                    <div class="form-group" [ngClass]="{'focused':focus===true}">
+                      <div class="form-floating input-group input-group-alternative mb-3">
+                        <div class="input-group-prepend">
+                          <span for="floatingInput" class="input-group-text"><i class="ni ni-hat-3"></i>E-posta</span>
+                        </div>
+                        <input
+                        formControlName="email"
+                        type="email"
+                        class="form-control"
+                        id="floatingInput"
+                        placeholder="name@example.com"
+                        />
+                      </div>
+                    </div>
 
-      <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me" /> Remember me
-        </label>
+                    <div class="form-group" [ngClass]="{'focused':focus===true}">
+                      <div class="form-floating input-group input-group-alternative mb-3">
+                        <div class="input-group-prepend">
+                          <span for="floatingPassword" class="input-group-text"><i class="ni ni-hat-3"></i>Parola</span>
+                        </div>
+                        <input
+                        formControlName="password"
+                          type="password"
+                          class="form-control"
+                          id="floatingPassword"
+                          placeholder="Password"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="form-group" [ngClass]="{'focused':focus===true}">
+                      <div class="form-floating input-group input-group-alternative mb-3">
+                        <div class="input-group-prepend">
+                          <span for="floatingPassword" class="input-group-text"><i class="ni ni-hat-3"></i>Name</span>
+                        </div>
+                        <input
+                        formControlName="name"
+                          type="text"
+                          class="form-control"
+                          id="floatingPassword"
+                          placeholder="name"
+                        />
+                      </div>
+                    </div>
+                
+                    <div class="form-group" [ngClass]="{'focused':focus===true}">
+                      <div class="form-floating input-group input-group-alternative mb-3">
+                        <div class="input-group-prepend">
+                          <span for="floatingPassword" class="input-group-text"><i class="ni ni-hat-3"></i>Surname</span>
+                        </div>
+                        <input
+                        formControlName="surname"
+                          type="text"
+                          class="form-control"
+                          id="floatingInput"
+                          placeholder="surname"
+                        />
+                      </div>
+                    </div>
+              
+                    <div class="form-group" [ngClass]="{'focused':focus===true}">
+                      <div class="form-floating input-group input-group-alternative mb-3">
+                        <div class="input-group-prepend">
+                          <span for="floatingPassword" class="input-group-text"><i class="ni ni-hat-3"></i>Phone</span>
+                        </div>
+
+                        <input
+                        formControlName="phone"
+                          type="text"
+                          class="form-control"
+                          id="floatingInput"
+                          placeholder="phone"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="custom-control custom-control-alternative custom-checkbox">
+                      <input class="custom-control-input" id=" customCheckLogin" type="checkbox" value="remember-me">
+                      <label class="custom-control-label" for=" customCheckLogin">
+                        <span>Remember me</span>
+                      </label>
+                    </div>
+                    <button  class="w-100 btn btn-lg btn-primary" (click)="login()">
+                      Kayıt Ol
+                    </button>
+                    <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
+                  </form>
+                
+              </div>
+            </body>
+          </div>
+        </div>
       </div>
-      <button  class="w-100 btn btn-lg btn-primary" (click)="register()">
-        Kayıt Ol
-      </button>
-      <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
-    </form>
-  </main>
-</body>
+    </div>
+  </section>
+</main>
