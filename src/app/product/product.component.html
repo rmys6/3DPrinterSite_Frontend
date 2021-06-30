@@ -25,32 +25,43 @@
   </tbody>
   
 </table> -->
-
-<div class="row">
-  <div class="col-lg-10">
-      <div class="row row-grid align-items-center">
-          <div class="col-lg-4 col-sm-6 px-2" *ngFor="let product of products | slice: pageSize | slice: 0:itemsPerPage">
-              <div class="card shadow shadow-lg--hover mt-3"  >
-                  
-                      <div routerLink="/productDetail/{{ product.productId }}" routerLinkActive="router-link-active"  class="card-body p-2">
-                          <div class="d-flex px-1">
-                              <div>
-                                  <img src="./assets/img/theme/cube.jpeg" alt="Raised image" class="img-fluid rounded m-1" style="height: 300px;" >
-                                  <small class="text-muted font-weight-bold">{{product.name}} </small>
-                                  <small class="text-muted"> {{product.name}} </small>
-                                  <!--
-                                  <button class="btn btn-icon btn-2 btn-primary" type="button">
-                                      <span class="btn-inner--icon"><i class="ni ni-basket"></i></span>
-                                      <span class="btn-inner--text">Add to Cart</span>
-                                  </button>
-                                  -->
-                                  <p class="text-primary text-center font-weight-bold mb-0 mt-3">{{product.price}}  TL</p>
-                              </div>
-                          </div>
-                      </div>
-                  
+<section class="section section-components pb-0 pt-3" id="section-components">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+          <div class="row row-grid align-items-center">
+              <div class="col-lg-4 col-sm-6 px-2" *ngFor="let product of products | slice: pageSize | slice: 0:itemsPerPage">
+                  <div class="card shadow shadow-lg--hover mt-3"  >
+                      
+                    <div routerLink="/productDetail/{{ product.productId }}" routerLinkActive="router-link-active"  class="card-body p-2">
+                        <div class="d-flex px-1">
+                            <div>
+                                <img src="./assets/img/theme/cube.jpeg" alt="Raised image" class="img-fluid rounded m-1" style="height: 300; width:300 ;" >
+                                <small class="text-muted font-weight-bold">{{product.name}} </small>
+                                <small class="text-muted"> {{product.name}} </small>
+                                <!--
+                                <button class="btn btn-icon btn-2 btn-primary" type="button">
+                                    <span class="btn-inner--icon"><i class="ni ni-basket"></i></span>
+                                    <span class="btn-inner--text">Add to Cart</span>
+                                </button>
+                                -->
+                                <p class="text-primary text-center font-weight-bold mb-0 mt-3">{{product.price}}  TL</p>
+                            </div>
+                        </div>
+                    </div>
+                      
+                  </div>
               </div>
           </div>
       </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+      <nav aria-label="Page navigation example">
+          <ngb-pagination [collectionSize]="products.length" [pageSize]="itemsPerPage" [(page)]="currentPage" (pageChange)="onPageChange(currentPage)" aria-label="Default pagination">
+            <ng-template ngbPaginationPrevious><i _ngcontent-c9="" class="fa fa-angle-left"></i></ng-template>
+            <ng-template ngbPaginationNext><i _ngcontent-c9="" class="fa fa-angle-right"></i></ng-template>
+          </ngb-pagination>
+      </nav>
+    </div>
   </div>
-</div>
+</section>

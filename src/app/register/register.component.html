@@ -8,7 +8,7 @@
             <body class="text-center">
               <div class="card-body px-lg-5 py-lg-5">
               
-                  <form role="form" [formGroup]="loginForm">
+                  <form role="form" [formGroup]="registerForm">
                     <h1 class="h3 mb-3 fw-normal">Kayıt Ol</h1>
                     <div class="form-group" [ngClass]="{'focused':focus===true}">
                       <div class="form-floating input-group input-group-alternative mb-3">
@@ -92,7 +92,7 @@
                         <span>Remember me</span>
                       </label>
                     </div>
-                    <button  class="w-100 btn btn-lg btn-primary" (click)="login()">
+                    <button  class="w-100 btn btn-lg btn-primary mt-2" (click)="register()">
                       Kayıt Ol
                     </button>
                     <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
