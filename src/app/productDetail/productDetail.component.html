@@ -24,18 +24,25 @@
                           <h4 class="text-muted font-weight-bold">Marka/Seller </h4>
                           <h5 class="text-muted"> {{product.name}}</h5>
                           <div class="row mt-4">
-                              <div class="col-lg-6">
+                              <div class="col-lg-5">
                                   <div class="row mx-0 mt-1">
-                                      <button class="btn-sm btn-icon btn-1 btn-primary shadow-lg--hover" type="button">
-                                          <span class="btn-inner--icon"><i class="ni ni-fat-delete"></i></span>
-                                      </button>
-                                      <input type="text" placeholder="  1" class="form-control mx-1" />
-                                      <button class="btn-sm btn-icon btn-1 btn-primary shadow-lg--hover" type="button">
-                                          <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
-                                      </button>
+                                      <!--
+                                      <div class="col-lg-5 p-0">
+                                        <button class="btn btn-icon btn-1 btn-primary shadow-lg--hover" type="button">
+                                            <span class="btn-inner--icon"><i class="ni ni-fat-delete"></i></span>
+                                        </button>
+                                      </div>-->
+                                   
+                                        <input type="number" placeholder=1 class="form-control mb-2"/>
+                                
+                                      <!--<div class="col-lg-4 p-0">
+                                        <button class="btn btn-icon btn-1 btn-primary shadow-lg--hover" type="button">
+                                            <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
+                                        </button>
+                                      </div>-->
                                   </div>
                               </div>
-                              <div class="col-lg-6">
+                              <div class="col-lg-7">
                                   <h3 class="text-primary font-weight-bold mb-4">{{product.price}} TL</h3>
                               </div>
                           </div>
@@ -45,9 +52,7 @@
                           </button>
                           <div class="mt-4">
                               <h5 class="text-muted font-weight-bold">Product Details </h5>
-                              <p>Material</p>
-                              <p>Dimension</p>
-                              <p>...</p>
+                              <p>{{product.description}}</p>
                           </div>
                       </div>
                   </div>          
